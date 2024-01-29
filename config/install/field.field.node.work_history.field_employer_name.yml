@@ -1,0 +1,19 @@
+uuid: 532ee9c9-5517-4536-9a10-9b7e2273b52f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_employer_name
+    - node.type.work_history
+id: node.work_history.field_employer_name
+field_name: field_employer_name
+entity_type: node
+bundle: work_history
+label: 'Employer Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

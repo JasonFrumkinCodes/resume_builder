@@ -1,0 +1,25 @@
+uuid: 17850a72-9328-4b0e-929f-c0335b11aae0
+langcode: en
+status: true
+dependencies:
+  module:
+    - resume_builder
+    - system
+  theme:
+    - bootstrap
+id: bootstrap_workhistory
+theme: bootstrap
+region: content
+weight: 0
+provider: null
+plugin: work_history_block
+settings:
+  id: work_history_block
+  label: 'Work Experience'
+  label_display: visible
+  provider: resume_builder
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

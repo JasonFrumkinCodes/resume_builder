@@ -1,0 +1,19 @@
+uuid: 330edc57-5ab5-47bc-b983-7156bdfd4902
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_job_title
+    - node.type.work_history
+id: node.work_history.field_job_title
+field_name: field_job_title
+entity_type: node
+bundle: work_history
+label: 'Job Title'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

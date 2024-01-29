@@ -1,0 +1,59 @@
+<?php
+
+use Drupal\taxonomy\Entity\Vocabulary;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\Core\Entity\Entity\EntityFormDisplay;
+use Drupal\Core\Entity\Entity\EntityViewDisplay;
+use Drupal\Core\Render\Element;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\node\Entity\Node;
+
+function resume_builder_theme_registry_alter(&$theme_registry) {
+	$theme_registry['node__work_history']['render element'] = 'content';
+	$theme_registry['node__work_history']['type'] = 'theme_engine';
+	$theme_registry['node__work_history']['template'] = 'node--work-history';
+	$theme_registry['node__work_history']['path'] = 'modules/custom/resume_builder/templates';
+
+	$theme_registry['page__front']['render element'] = 'content';
+	$theme_registry['page__front']['type'] = 'theme_engine';
+	$theme_registry['page__front']['template'] = 'page--front';
+	$theme_registry['page__front']['path'] = 'modules/custom/resume_builder/templates';
+
+}
+
+function resume_builder_preprocess_node__work_history(&$variables) {
+  $duties = array();
+  foreach($variables['elements']['field_job_duties']['#object']->get('field_job_duties')->getValue() as $job_duty){
+  	$duties[] = $job_duty['value'];
+  }
+  $variables['employment_duties'] = $duties;
+  $variables['employment_duration'] = $variables['elements']['field_start_date'][0]['#markup']." - ";
+  if($variables['elements']['field_end_date'][0]){
+  	$variables['employment_duration'] .= $variables['elements']['field_end_date'][0]['#markup'];
+  } else {
+  	$variables['employment_duration'] .= "Current";
+  }
+  $variables['employment_location'] = $variables['elements']['field_location'][0]['#context']['value'];
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+}
+
+function resume_builder_uninstall($is_syncing) {
+	$bundle = "work_history";
+	entity_delete($bundle);
+}
+
+function entity_delete($bundle) {
+	$ids = \Drupal::entityQuery('node')->condition('type', $bundle)->accessCheck(FALSE)->execute();
+	$storageHandler = \Drupal::entityTypeManager()->getStorage('node');
+	$entities = $storageHandler->loadMultiple($ids);
+	foreach ($entities as $entity) {
+	     $entity->delete();
+	}	
+
+	// Delete content type.
+	$content_type = \Drupal::entityTypeManager()
+		->getStorage('node_type')
+		->load($bundle);
+	$content_type->delete();
+}

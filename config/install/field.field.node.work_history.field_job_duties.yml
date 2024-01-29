@@ -1,0 +1,19 @@
+uuid: 795ef2bf-d77e-4ca1-9fae-4047d9e2b387
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_job_duties
+    - node.type.work_history
+id: node.work_history.field_job_duties
+field_name: field_job_duties
+entity_type: node
+bundle: work_history
+label: ' Built Points: Duties & Accomplishments'
+description: 'Information on what your role was, what you were tasked with, and major accomplishments you achieved.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

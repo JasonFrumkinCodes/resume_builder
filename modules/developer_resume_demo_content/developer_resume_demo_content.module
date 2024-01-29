@@ -1,0 +1,139 @@
+<?php
+
+use Drupal\taxonomy\Entity\Vocabulary;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\Core\Entity\Entity\EntityFormDisplay;
+use Drupal\Core\Entity\Entity\EntityViewDisplay;
+use Drupal\Core\Render\Element;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\node\Entity\Node;
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function developer_resume_preprocess_html(&$variables) {
+	if(isset($variables['page']['sidebar_second'])){
+		unset($variables['page']['sidebar_second']);
+	};
+}
+
+function developer_resume_demo_content_install() {
+	$vid = "development_skills";
+	$name = "Development Skills";
+	vocabulary_create($vid,$name,1);
+
+	$vid = "drupal_development_skills";
+	$name = "Drupal Development Skills";
+	vocabulary_create($vid,$name,0);
+
+	$vid = "general_web_development_skills";
+	$name = "Other Related Web Development Skills";
+	vocabulary_create($vid,$name,0);
+
+	personal_details_config_values();
+	work_history_nodes();
+}
+
+function developer_resume_demo_content_uninstall($is_syncing) {
+	$vid = "development_skills";  
+	$name = "Development Skills";
+	vocabulary_delete($vid, $name);
+
+	$vid = "drupal_development_skills";
+	$name = "Drupal Development Skills";
+	vocabulary_delete($vid,$name);
+
+	$vid = "general_web_development_skills";
+	$name = "Other Related Web Development Skills";
+	vocabulary_delete($vid,$name);	
+
+}
+
+function vocabulary_create($vid,$name,$create_storage) {
+	$vocabularies = \Drupal\taxonomy\Entity\Vocabulary::loadMultiple();
+	if (!isset($vocabularies[$vid])) {
+		
+		/* create the vocabulary */
+		$vocabulary = \Drupal\taxonomy\Entity\Vocabulary::create(array(
+		    'vid' => $vid,
+		    'description' => 'Development skills vocabulary to populate the skills block',
+		    'name' => $name,
+		))->save();
+		/* success message */
+		\Drupal::messenger()->addMessage($name . ' vocabulary created');
+	
+		// Read the JSON file  
+		$json = file_get_contents('vocabulary_terms.json', FILE_USE_INCLUDE_PATH);
+		  
+		if($json){
+			// Decode the JSON file 
+			$json_data = json_decode($json,true);
+			foreach($json_data['skills'][$vid] as $term_key=>$term){
+			  $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->create([
+			    'name' => $term,
+			    'vid' => $vid
+			  ])->save();
+			}
+		}
+	}
+	else {
+		/* vocabulary already exists message */
+		\Drupal::messenger()->addMessage($name . ' vocabulary alredy exits');
+	}
+}
+
+function vocabulary_delete($vid, $name) {
+ 	/* load vocabulary by machine name */
+ 	$vocab = Vocabulary::load($vid);
+
+ 	/* if vocabulary exists delete it */
+ 	if ($vocab) {
+    	$vocab->delete();
+ 	}
+
+ 	/* vocabulary successfully removed message */
+	\Drupal::messenger()->addMessage($name . ' vocabulary removed');
+}
+
+function personal_details_config_values(){
+	// Read the JSON file  
+	$json = file_get_contents('personal_details.json', FILE_USE_INCLUDE_PATH);
+	  
+	if($json){
+		// Decode the JSON file 
+		$json_data = json_decode($json,true);
+		$personal_details = $json_data['personal_details'];
+		$config = \Drupal::configFactory()->getEditable('resume_builder.settings');
+		foreach($personal_details as $config_key=>$config_value){
+	    	$config->set('resume_builder.'.$config_key, $config_value);
+		}
+    $config->save();
+	}
+}
+
+function work_history_nodes(){
+	// Read the JSON file  
+	$json = file_get_contents('work_experience.json', FILE_USE_INCLUDE_PATH);
+	  
+	if($json){
+		// Decode the JSON file 
+		$json_data = json_decode($json,true);
+		foreach($json_data as $work_history_array){
+			// Create a new node object.
+			$node = Node::create([
+			  'type' => 'work_history',
+			  'title' => $work_history_array['title'],
+			  'field_employer_name' => $work_history_array['field_employer_name'],
+			  'field_location' => $work_history_array['field_location'],
+			  'field_start_date' => $work_history_array['field_start_date'],
+			  'field_end_date' => $work_history_array['field_end_date'],
+			  'field_job_duties' => $work_history_array['field_job_duties'],
+			  'promote' => 0
+			]);
+
+			// Save the node.
+			$node->save();	
+		}
+	}
+}

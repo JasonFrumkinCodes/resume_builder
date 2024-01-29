@@ -1,0 +1,156 @@
+.no-padding {
+	padding: 0px !important;
+}
+.fa-calendar-days, .fa-location-dot, .fa-envelope, .fa-linkedin, .fa-github {
+	padding-right: 6px;
+}
+.fa-mobile-screen-button {
+	padding-right: 9px;
+}
+.fa-linkedin {
+	float: left;
+	padding-top: 3px;
+}
+.fa-github  {
+	float: left;
+	padding-top: 4px;
+}
+.skills_li {
+	margin-bottom: 3px;
+}
+.employer_name {
+    margin-top: 0px !important;
+	font-size: 20px;
+}
+.work_history_list {
+	margin-bottom: 30px;
+}
+.programing_languages, .drupal_development_skills, .general_web_development_skills {
+    font-size: 19px;
+}
+.view-frontpage {
+    display: none;
+}
+.mb-2 {
+    margin-bottom: 3px;
+}
+.sidebar-primary {
+    padding: 0px !important;
+}
+.block-applicant-details-block {
+    top: -1px;
+}
+.region-header {
+    display: none;
+}
+#block-bootstrap-careerobjectives {
+    padding-top: 20px;
+}
+.bordered-row {
+    border: 1px solid #ccc;
+}
+#block-bootstrap-skillsblock h2.block-title {
+    text-transform: uppercase;
+    font-family: Lora,-apple-system,BlinkMacSystemFont,sans-serif!important;
+    font-weight: bold;
+}
+#personal_details_box {
+    background-color: #333!important;
+    transition: background-color .5s ease;
+    padding: 20px;
+    color: white;
+}
+#personal_details_box a {
+    color: white;
+}
+.applicant_full_name {
+    font-size: 28px;
+    font-weight: bold;
+}
+.career_path_title {
+    font-size: 18px;
+    padding-bottom: 17px;
+}
+.block-skills-block, .block-education-details-block {
+    background-color: #f1eded;
+    padding: 20px;
+}
+.block-education-details-block .block-title {
+    text-transform: uppercase;
+    font-family: Lora,-apple-system,BlinkMacSystemFont,sans-serif!important;
+    font-weight: bold;
+}
+.school_attended {
+    font-weight: bold;
+}
+.block-drupal-skills-block, .block-web-development-skills-block {
+    background-color: #f1eded;
+    padding: 0px 20px 20px 20px;
+}
+.region-sidebar-first {
+    background-color: #f1eded;    
+}
+.feed-icons {
+    display: none;
+}
+.applicant_linkedin_profile {
+    display: flex;
+}
+.applicant_github_url {
+    display: flex;
+}
+h2.block-title {
+    margin-top: 0px !important;
+}
+#block-bootstrap-workhistory {
+	margin-top: 40px;
+}
+.employment_location {
+    margin: 5px 0 10px;
+}
+#employment_details .fa-location-dot, #employment_details .fa-location-dot {
+    height: 19px;
+    position: relative;
+    top: 3px;
+}
+#employment_details .fa-calendar-days {
+    height: 19px;
+    position: relative;
+    top: 2px;
+}
+.school_city_state .fa-location-dot {
+    float: left;
+}
+.resume_builder_title {
+    font-size: 17px;
+    font-weight: 550;
+}
+h2.job_title {
+    margin-bottom: 3px;
+    font-size: 28px;
+    margin-top: 7px;
+    font-family: Lato,-apple-system,BlinkMacSystemFont,sans-serif!important;
+}
+#block-bootstrap-careerobjectives h2, #block-bootstrap-workhistory .block-title {
+    font-size: 28px;
+    text-transform: uppercase;
+    font-family: Lora,-apple-system,BlinkMacSystemFont,sans-serif!important;
+    font-weight: bold !important;
+}
+.footer {
+    margin-top: 0 !important;
+    padding: 7px 20px !important;
+    border: 1px solid #ccc;
+}
+.navbar-btn {
+    display: none;
+}
+.content-primary {
+    padding-left: 20px !important;
+}
+@media screen and (min-width: 1200px) {    
+    .navbar.container {
+        max-width: 1180px !important;
+        padding-left: 0px;
+    }
+}

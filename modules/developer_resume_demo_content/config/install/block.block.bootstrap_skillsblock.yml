@@ -1,0 +1,27 @@
+uuid: 16046ca5-60e1-4f70-9047-3ed39ffb137e
+langcode: en
+status: true
+dependencies:
+  module:
+    - resume_builder
+    - system
+  theme:
+    - bootstrap
+id: bootstrap_skillsblock
+theme: bootstrap
+region: sidebar_first
+weight: -8
+provider: null
+plugin: skills_block
+settings:
+  id: skills_block
+  label: Skills
+  label_display: visible
+  provider: resume_builder
+  taxonomy: development_skills
+  block_title: 'Programing Languages'
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

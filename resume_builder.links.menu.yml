@@ -1,0 +1,6 @@
+resume_builder.admin:
+  title: 'Resume Builder Settings'
+  description: 'Your personal details and education details'
+  parent: system.admin_config_development
+  route_name: resume_builder.settings.form
+  weight: 100

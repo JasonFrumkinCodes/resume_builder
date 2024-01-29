@@ -1,0 +1,27 @@
+uuid: 4db7fd2a-417a-40fe-bbad-b44bd71a219c
+langcode: en
+status: true
+dependencies:
+  module:
+    - resume_builder
+    - system
+  theme:
+    - bootstrap
+id: bootstrap_skillsblock_3
+theme: bootstrap
+region: sidebar_first
+weight: -6
+provider: null
+plugin: skills_block
+settings:
+  id: skills_block
+  label: 'Other Related Web Development'
+  label_display: '0'
+  provider: resume_builder
+  taxonomy: general_web_development_skills
+  block_title: 'Other Related Web Development'
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

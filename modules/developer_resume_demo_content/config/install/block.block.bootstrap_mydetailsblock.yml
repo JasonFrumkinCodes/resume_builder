@@ -1,0 +1,25 @@
+uuid: ba7f81f8-5aad-4721-b38b-783f937045e3
+langcode: en
+status: true
+dependencies:
+  module:
+    - resume_builder
+    - system
+  theme:
+    - bootstrap
+id: bootstrap_mydetailsblock
+theme: bootstrap
+region: sidebar_first
+weight: -10
+provider: null
+plugin: applicant_details_block
+settings:
+  id: applicant_details_block
+  label: 'My Details Block'
+  label_display: '0'
+  provider: resume_builder
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

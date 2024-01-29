@@ -1,0 +1,7 @@
+name: Resume Builder Demo Content
+type: module
+description: Installs demo content and places blocks for Resume Builder Module.
+core_version_requirement: ^9.4 || ^10
+package: resume_builder
+dependencies:
+  - resume_builder:resume_builder

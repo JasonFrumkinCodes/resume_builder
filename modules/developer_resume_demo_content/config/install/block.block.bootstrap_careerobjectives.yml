@@ -1,0 +1,25 @@
+uuid: de26a175-d4ff-4011-b1c7-2cffd20085e2
+langcode: en
+status: true
+dependencies:
+  module:
+    - resume_builder
+    - system
+  theme:
+    - bootstrap
+id: bootstrap_careerobjectives
+theme: bootstrap
+region: content
+weight: 0
+provider: null
+plugin: career_objectives_block
+settings:
+  id: career_objectives_block
+  label: 'Career Objectives'
+  label_display: visible
+  provider: resume_builder
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

@@ -1,0 +1,41 @@
+
+{{ attach_library('resume_builder/custom') }}
+{{ attach_library('core/drupal.dialog.ajax') }}
+
+{%
+  set classes = [
+    node.bundle|clean_class,
+    node.isPromoted() ? 'is-promoted',
+    node.isSticky() ? 'is-sticky',
+    not node.isPublished() ? 'is-unpublished',
+    view_mode ? view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+
+<article{{ attributes.addClass(classes) }}>
+
+  <div{{ content_attributes.addClass('content') }}>
+    <h2 class="job_title">{{ label }}</h2>
+    <h3 class="employer_name">{{ content.field_employer_name }}</h3>
+      <div id="employment_details" class="col-sm-12 no-padding">
+        <div class="col-sm-12 no-padding employment_duration">
+          <i class="fa-regular fa-calendar-days"></i>{{ employment_duration }}
+        </div>
+        <div class="col-sm-12 no-padding employment_location">
+          <i class="fa-solid fa-location-dot"></i>{{ employment_location }}
+        </div>
+      </div>
+    <ul class="work_history_list">
+    {% for item in employment_duties %}
+      <li class="skills_li">
+        {{ item }}
+      </li>
+    {% endfor %}
+    </ul>
+    {#
+      {{ content }}
+    #}
+  </div>
+
+</article>

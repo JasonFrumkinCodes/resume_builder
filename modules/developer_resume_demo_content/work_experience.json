@@ -1,0 +1,49 @@
+[
+	{
+		"title":"Web Developer",
+		"field_employer_name":"Arlington Heights Library",
+		"field_location":"Arlington Heights, IL",
+		"field_start_date":"2015-06-06",
+		"field_job_duties":{"0":"Migrated www.ahml.info from Drupal 6 to Drupal 8 with well over 1 million nodes present","1":"Successful creation and implementation of a custom data harvest module for marc record data additions and changes / updates. Harvested from a 3rd party PostgreSQL database (Sierra ILS), this action happens once every 60 second from a cron job ingratiated into Drupal. New catalog records, along with current library record changes are stored / updated, and then indexed using Apache SOLR to facilitate search ability. Featuring a full faceting system and search input field auto-suggestions, search results are returned and displayed in under 1 second. Updates like a book being returned, are reflected in the online catalog within 60 seconds from when the check-in occurred","2":"Successful creation of a highly customized reservation / registration / equipment & events management system via the extension of the Drupal contributed module RNG along with several custom written Drupal modules","3":"Currently responsible for the library catalog now containing a little over 2 million nodes"}
+	},
+	{
+		"title":"Senior Drupal Developer",
+		"field_employer_name":"Family Office Exchange",
+		"field_location":"Remote / Hybrid Chicago, IL",
+		"field_start_date":"2022-07-10",
+		"field_end_date":"2023-12-12",
+		"field_job_duties":{"0":"Worked in tandem with one other developer to successfully upgrade FOX's existing Drupal 7 website to Drupal 9 located at https://public.familyoffice.com/","1":"Ensured content integrity during the upgrade/migration process","2":"Translated Drupal 7 .tpl templates files to .twig files, along with a major front-end design refresh using Bootstrap and Sass. This design refresh was facilitated through wire-frame designs on Figma.com delivered by a graphic designer and UX expert. Designs were broken down by desktop, tablet, and mobile screen size layouts.","3":"Successfully migration of hosting companies from Acquia to Pantheon (Database, File base, Codebase, and all required DNS changes)","4":"Git versioning control on Github and use of Terminus to push from Github to Pantheon","5":"Use of Pantheon multi-dev environments to facilitate user acceptance testing, and merging of multi-dev environments to the dev environment after passing UA/QA. Code was then pushed to test, and finally along to live.","6":"Successfully implemented an initiative to sell advertising space on FOX's website. This was done via a custom module I created to integrate with AdPlugg, a 3rd party advertisement management system. The custom module added the ability to communicate with AdPlugg's api, pull advertisements created on their system into FOX's website, and placed via a custom programmatically created block for front end display."}
+	},
+	{
+		"title":"Senior Drupal Developer",
+		"field_employer_name":"Spartanburg Healthcare Systems",
+		"field_location":"Fully Remote",
+		"field_start_date":"2021-10-10",
+		"field_end_date":"2022-05-12",
+		"field_job_duties":{"0":"Hired as a senior Drupal developer for an eight month contract role, I was assigned a list of projects to complete. Tasked with the planning, creation, and implementation of each project, I was able to maintain progress according to the company timeline for each of the projects roll-out dates.","1":"Normal daily duties included custom module building and implementation, custom twig templating and sass/css creation, creation of advanced and contextually aware views, creation of new view and display modes along with corresponding twig templates.","2":"Daily remote scrums and accountability for working within an agile framework were required and I flourished very well.","3":"All projects were successfully created, implemented, assessed by a QA team, and signed-off as completed by initial dead-line projected dates. Upon the contracts end, I parted with Spartanburg Healthcare System and both them and I were happy with the prior 8 months!"}
+	},
+	{
+		"title":"Remote Drupal Developer",
+		"field_employer_name":"Madison Wisconsin Library System",
+		"field_location":"Fully Remote",
+		"field_start_date":"2019-10-10",
+		"field_end_date":"2020-03-12",
+		"field_job_duties":{"0":"The Madison Wisconsin Library system of 9 libraries uses Drupal as a CMS for their website https://www.madisonpubliclibrary.org/, and found themselves in need of a robust reservation system that ties into the registered uses of their website. The reservation system had to account for locations, hours of operation, reservable resources, program registration, event waiting lists, automated emails, and so much more.","1":"With a prior relationship existing, the Madison Library reached out to us at the Arlington Heights Memorial Library to inquire about what we use. We were allowed to demo what the library I work for uses and they expressed interest in using the same software, in which I was the main developer of.","2":"The reservation system is a collection of several custom developed Drupal modules, along with the extension of two contributed modulesavailable on Drupal.org. When we created the system, we set a goal of being as user friendly as could be, and attained that goal upon launch.","3":"Contracts were drawn between the Madison Wisconsin Library System and the Arlington Heights Memorial Library, and I was brought on as a contractor to implement our custom reservation system on the Madison Wisconsin's Library website.","4":"After extensive customization required by changes needed for aspects specific to their library system, I was able to install the software and successfully complete the job."}
+	},	
+	{
+		"title":"Web Developer",
+		"field_employer_name":"Intouch Practice Communications",
+		"field_location":"Highland, IN",
+		"field_start_date":"2011-10-10",
+		"field_end_date":"2015-04-12",
+		"field_job_duties":{"0":"Project manager and lead software developer in charge of developing an integrated communications system that pulled data from client databases nightly via a linux system cron job, and stored client data locally for processing on behalf of the client.","1":"The backend was built on top of a Drupal 6 install, and the final build ended up using Drupal as a headless install, with React (JavaScript Library) as the frontend framework.","2":"Created the user experience that fetched, parsed, and formatted client data, and relayed it into React components.","3":"Worked under a strict NDA that I still adhere to."}
+	},	
+	{
+		"title":"Web Developer",
+		"field_employer_name":"Medinah Country Club",
+		"field_location":"Medinah, IL",
+		"field_start_date":"2009-11-10",
+		"field_end_date":"2011-09-12",
+		"field_job_duties":{"0":"Successfully managed the transfer of www.medinahcc.from a static HTML site to a content management system built using Ruby on Rails","1":"Oversaw concept mock-up and wireframe design for their updated website while in development","2":"Translated designs and wireframes into high-quality code using HTML, CSS, and JavaScript","3":"100% responsibility over website content and content upkeep"}
+	}			
+]

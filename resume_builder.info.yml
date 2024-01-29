@@ -1,0 +1,8 @@
+name: Resume Builder
+type: module
+description: Module defined Resume Builder.
+core_version_requirement: ^9.4 || ^10
+package: resume_builder
+dependencies:
+  - drupal:block
+  - fontawesome:fontawesome

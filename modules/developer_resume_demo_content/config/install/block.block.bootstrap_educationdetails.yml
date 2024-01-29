@@ -1,0 +1,25 @@
+uuid: d10fb6e7-df30-4683-a8e9-4b8c5fa6f038
+langcode: en
+status: true
+dependencies:
+  module:
+    - resume_builder
+    - system
+  theme:
+    - bootstrap
+id: bootstrap_educationdetails
+theme: bootstrap
+region: sidebar_first
+weight: -9
+provider: null
+plugin: education_details_block
+settings:
+  id: education_details_block
+  label: Education
+  label_display: visible
+  provider: resume_builder
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

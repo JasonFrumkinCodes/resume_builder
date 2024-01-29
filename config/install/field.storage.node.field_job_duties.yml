@@ -1,0 +1,19 @@
+uuid: 3bde380d-e9bf-485c-8baf-ee68fd59a7ea
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_job_duties
+field_name: field_job_duties
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

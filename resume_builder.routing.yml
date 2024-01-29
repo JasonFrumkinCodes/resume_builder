@@ -1,0 +1,7 @@
+resume_builder.settings.form:
+  path: '/admin/config/development/resume_builder'
+  defaults:
+    _title: 'Resume Personal and Education Settings'
+    _form: '\Drupal\resume_builder\Form\ResumeBuilderSettingsForm'
+  requirements:
+    _permission: 'administer resume_builder'
