@@ -15,6 +15,15 @@
 	float: left;
 	padding-top: 4px;
 }
+.education_hr {
+    border-top: 1px solid #a39999;
+}
+.degree_type {
+    font-size: 20px;
+}
+#education_details {
+    margin-top: 20px;
+}
 .skills_li {
 	margin-bottom: 3px;
 }
@@ -124,6 +133,7 @@ h2.block-title {
 .resume_builder_title {
     font-size: 17px;
     font-weight: 550;
+    margin-top: 15px;
 }
 h2.job_title {
     margin-bottom: 3px;
